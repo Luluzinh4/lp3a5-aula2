@@ -4,7 +4,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		String nomeProcurado = "J";
+		String nomeProcurado = "Harry";
 		
 		Thread autores = new Thread(new TarefaBuscaNome("autores.txt", nomeProcurado));
 		autores.start();
@@ -14,6 +14,12 @@ public class Principal {
 		
 		Thread assinatura2 = new Thread(new TarefaBuscaNome("assinaturas2.txt", nomeProcurado));
 		assinatura2.start();
+		
+		Thread livros = new Thread(new TarefaBuscaNome("listaLivros.txt", nomeProcurado));
+		livros.start();
+		
+		Thread filmes = new Thread(new TarefaBuscaNome("listaFilmes.txt", nomeProcurado));
+		filmes.start();
 	}
 
 }
